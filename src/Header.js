@@ -5,12 +5,13 @@ function Header({addItem}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         addItem(input);
+        
     }
     return (
         <header className="header">
 		<h1>Yapılacaklar</h1>
 		<form onSubmit={handleSubmit}>
-			<input className="new-todo" placeholder="What needs to be done?" value={input} onChange={(e) => setInput(e.target.value)} autofocus></input>
+			<input className="new-todo" placeholder="What needs to be done?" value={input} onChange={(e) => setInput(e.target.value)} autoFocus></input>
 		</form>
 	    </header>
     )

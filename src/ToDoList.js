@@ -1,16 +1,17 @@
 import {useState} from 'react'
 import ToDoItem from './ToDoItem';
-function ToDoList() {
-    const [itemList, setItemList] = useState([]);
-    const addItem = (item) => {
-        setItemList([item,...itemList]);
-    }
+function ToDoList({ls}) {
+    console.log("TodoList : ", ls);
     const deleteItem = () => {
 
     }
     return (
     <ul className="todo-list">
-            <ToDoItem input="Test1" id={0} deleteItem={deleteItem}/>
+            {ls.map(item => {
+                //console.log(item.test);
+                return <ToDoItem key={item.id} input={item.text} id={item.id} deleteItem={deleteItem}/>
+            })}
+            
 
 	</ul>
     )

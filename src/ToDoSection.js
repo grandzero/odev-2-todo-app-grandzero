@@ -1,14 +1,14 @@
 import React from 'react'
-import ToDoApp from './ToDoApp';
 import ToDoList from './ToDoList';
-function ToDoSection() {
+function ToDoSection({list}) {
+	//console.log("Liste : ", list);
     return (
         <section className="main">
 		<input className="toggle-all" type="checkbox"></input>
-		<label for="toggle-all">
+		<label htmlFor="toggle-all">
 			Tamamlandı Olarak İşaretle
 		</label>
-        <ToDoList />
+        <ToDoList ls={list}/>
 		
 	</section>
     )
