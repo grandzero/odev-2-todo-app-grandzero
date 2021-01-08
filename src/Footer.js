@@ -1,25 +1,25 @@
-import React from 'react'
+import {useState} from 'react'
 
-function Footer() {
-	
+function Footer({setlistChoice,listLength}) {
+	const [listStyle, setListStyle] = useState([true,false,false]);
     return (
         <footer className="footer">
 
 		
 		<span className="todo-count">
-			<strong>2 </strong>
+			<strong>{listLength} </strong>
 			items left
 		</span>
 
 		<ul className="filters">
 			<li>
-				<a className="selected">All</a>
+				<a className={listStyle[0] && "selected"} onClick={() => {setlistChoice(null); setListStyle(true,false,false)}}>All</a>
 			</li>
 			<li>
-				<a>Active</a>
+				<a className={listStyle[0] && "selected"} onClick={() => {setlistChoice(false); setListStyle(false,true,false)}} >Active</a>
 			</li>
 			<li>
-				<a>Completed</a>
+				<a className={listStyle[0] && "selected"} onClick={() => {setlistChoice(true); setListStyle(false,false,true)}} >Completed</a>
 			</li>
 		</ul>
 
