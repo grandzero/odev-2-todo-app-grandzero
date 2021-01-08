@@ -18,11 +18,14 @@ const setItemCompleted = (id) => {
     newLs[i].isCompleted = !newLs[i].isCompleted;
     settodoList(newLs);  
 }
+const clearCompleted = () => {
+    settodoList(todoList.filter(item => !item.isCompleted));
+}
     return (
         <section className="todoapp">
             <Header addItem = {addItem}/>
             <ToDoSection del={deleteItem} list = {todoList.filter(item => { if(listChoice === null) return item; return item.isCompleted === listChoice })} setCompleted = {setItemCompleted}/>
-            <Footer setlistChoice={setlistChoice} listLength={todoList.filter(item => item.isCompleted === false).length}/>
+            <Footer clearCompleted={clearCompleted} setlistChoice={setlistChoice} listLength={todoList.filter(item => item.isCompleted === false).length}/>
         </section>
     )
 }
