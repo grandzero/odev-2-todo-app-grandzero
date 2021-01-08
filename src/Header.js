@@ -5,6 +5,7 @@ function Header({addItem}) {
     const handleSubmit = (e) => {
         e.preventDefault();
         addItem(input);
+        setInput("");
         
     }
     return (

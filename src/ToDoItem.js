@@ -11,7 +11,7 @@ function ToDoItem({input,id,deleteItem}) {
         <div className="view">
             <input className="toggle" onClick={() => {changeStatus()}} type="checkbox"></input>
             <label>{input}</label>
-            <button className="destroy"></button>
+            <button className="destroy" onClick={() => deleteItem(id)}></button>
         </div>
     </li>   
     )

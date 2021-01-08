@@ -6,14 +6,15 @@ function ToDoApp() {
 const [todoList, settodoList] = useState([])
 const addItem = (item) => {
     const newLS = [{text: item, id: Math.random()},...todoList];
-   // console.log(newLS);
-    settodoList(newLS);
-   // console.log(newLS);
+    settodoList(newLS);   
 } 
+const deleteItem = (id) => {
+    settodoList(todoList.filter(item => id != item.id));
+}
     return (
         <section className="todoapp">
             <Header addItem = {addItem}/>
-            <ToDoSection list = {todoList}/>
+            <ToDoSection del={deleteItem} list = {todoList}/>
             <Footer />
         </section>
     )
