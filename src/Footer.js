@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-function Footer({setlistChoice,listLength,clearCompleted}) {
+function Footer({setlistChoice,listLength,clearCompleted,completedLength}) {
 	const [listStyle, setListStyle] = useState([true,false,false]);
     return (
         <footer className="footer">
@@ -24,9 +24,9 @@ function Footer({setlistChoice,listLength,clearCompleted}) {
 		</ul>
 
 		
-		<button onClick={clearCompleted} className="clear-completed">
+		{completedLength>0 &&<button onClick={clearCompleted} className="clear-completed">
 			Clear completed
-		</button>
+		</button>}
 	</footer>
     )
 }

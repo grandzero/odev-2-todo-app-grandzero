@@ -21,11 +21,25 @@ const setItemCompleted = (id) => {
 const clearCompleted = () => {
     settodoList(todoList.filter(item => !item.isCompleted));
 }
+const toggleAll = () => {
+    console.log("Toggle clicked");
+    if(todoList.filter(item => item.isCompleted === false).length > 0) settodoList(todoList.map(item => {item.isCompleted=true; return item;}));
+    else settodoList(todoList.map(item => {item.isCompleted=false; return item;}));
+}
     return (
         <section className="todoapp">
             <Header addItem = {addItem}/>
-            <ToDoSection del={deleteItem} list = {todoList.filter(item => { if(listChoice === null) return item; return item.isCompleted === listChoice })} setCompleted = {setItemCompleted}/>
-            <Footer clearCompleted={clearCompleted} setlistChoice={setlistChoice} listLength={todoList.filter(item => item.isCompleted === false).length}/>
+            <ToDoSection
+             del={deleteItem}
+              list = {todoList.filter(item => { if(listChoice === null) return item; return item.isCompleted === listChoice })} 
+              setCompleted = {setItemCompleted}
+              toggleAll={toggleAll}
+              />
+            <Footer 
+            clearCompleted={clearCompleted} 
+            setlistChoice={setlistChoice}
+             listLength={todoList.filter(item => item.isCompleted === false).length} 
+             completedLength={todoList.filter(item => item.isCompleted === true).length}/>
         </section>
     )
 }
