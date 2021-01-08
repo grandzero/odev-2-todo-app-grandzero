@@ -1,10 +1,7 @@
-import {useState} from 'react'
 
-function ToDoItem({input,id,deleteItem}) {
-    
-    const [isCompleted, setCompleted] = useState(false); 
+function ToDoItem({input,id,deleteItem,setCompleted,isCompleted}) {  
     const changeStatus = () => {
-        setCompleted(!isCompleted);
+        setCompleted(id);
     }
     return (
         <li className={isCompleted ? "completed" : ""}>
