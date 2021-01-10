@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import ToDoItem from './ToDoItem';
 function ToDoList({ls,del,setCompleted}) {
     return (
