@@ -13,13 +13,13 @@ function Footer({setlistChoice,listLength,clearCompleted,completedLength}) {
 
 		<ul className="filters">
 			<li>
-				<a className={listStyle[0] && "selected"} onClick={() => {setlistChoice(null); setListStyle(true,false,false)}}>All</a>
+				<a href="#" className={listStyle[0] && "selected"} onClick={() => {setlistChoice(null); setListStyle(true,false,false)}}>All</a>
 			</li>
 			<li>
-				<a className={listStyle[0] && "selected"} onClick={() => {setlistChoice(false); setListStyle(false,true,false)}} >Active</a>
+				<a href="#" className={listStyle[0] && "selected"} onClick={() => {setlistChoice(false); setListStyle(false,true,false)}} >Active</a>
 			</li>
 			<li>
-				<a className={listStyle[0] && "selected"} onClick={() => {setlistChoice(true); setListStyle(false,false,true)}} >Completed</a>
+				<a href="#" className={listStyle[0] && "selected"} onClick={() => {setlistChoice(true); setListStyle(false,false,true)}} >Completed</a>
 			</li>
 		</ul>
 
